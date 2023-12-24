@@ -43,7 +43,6 @@ front++;
 }
 }
 
-
 int search(int value)
 {
 if(front==-1)
@@ -90,6 +89,7 @@ printf("element %d not found in the queue.\n",value);
 return-1;
 }
 }
+
 void display()
 {
 if(front==-1)
@@ -102,19 +102,19 @@ printf("queue elements:");
 if(front<=rear){
 while(i<=rear)
 {
-printf("%d",queue[i]);
+printf("%d\t",queue[i]);
 i++;}}
 else
 {
 while(i<=size-1)
 {
-printf("%d",queue[i]);
+printf("%d\t",queue[i]);
 i++;
 }
 i=0;
 while(i<=rear)
 {
-printf("%d",queue[i]);
+printf("%d\t",queue[i]);
 i++;
 }}
 printf("\n");
@@ -125,11 +125,11 @@ int main()
 int choice,value;
 do
 {
- printf("1.enqueue.\n");
+ printf("1.enqueue\n");
  printf("2.dequeue\n");
- printf("3.search.\n");
- printf("4.display.\n");
- printf("5.exit.\n");
+ printf("3.search\n");
+ printf("4.display\n");
+ printf("5.exit\n");
 
  printf("Enter your choice:");
  scanf("%d",&choice);
@@ -144,7 +144,7 @@ case 2:
  dequeue(); break;
 case 3:
  printf("Enter the element you want to search:");
- scanf("d",&value);
+ scanf("%d",&value);
  search(value);
  break;
 case 4:
