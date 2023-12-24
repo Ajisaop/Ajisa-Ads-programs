@@ -12,7 +12,7 @@ printf(" stack immplementation using array:" );
 do
 {
 printf("\n1.push\n2.pop\n3.display\n4.exit\n");
-printf("\n Enter the choice:");
+printf("Enter the choice:");
 scanf("%d",&choice);
 switch(choice)
 {
@@ -76,7 +76,7 @@ if(top>=0)
 printf("Element in stack\n");
 for(i=top;i>=0;i--)
 {
-printf("%d/t",stack[i]);
+printf("%d\t",stack[i]);
 }}
 else
 {
