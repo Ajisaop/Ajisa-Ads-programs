@@ -22,7 +22,8 @@ top=top->next;
 free(temp);
 }
 
-void display(){
+void display()
+{
 if (top==NULL){
 printf("stack is empty.\n");
 return;
@@ -30,19 +31,42 @@ return;
 struct Node*temp=top;
 printf("Stack elements:\n");
 while (temp!=NULL){
-printf("%d",temp->data);
+printf("%d\t",temp->data);
 temp=temp->next;
 }
 printf("\n");
 }
-int main(){
+
+void search()
+{
+struct Node*temp;
+int value;
+temp=top;
+printf ("Enter the element to search:");
+scanf("%d",&value);
+while (temp!=0)
+{
+if(temp->data==value)
+{
+    printf("found\n");
+    return;
+}
+else{
+    printf("not found\n");
+    return;
+}
+}
+}
+int main()
+{
 int ch,value;
 while(1){
 printf("stack menu:\n");
 printf("1.push\n");
 printf("2.pop\n");
 printf("3.display\n");
-printf("4.Exit\n");
+printf("4.search\n");
+printf("5.Exit\n");
 printf("Enter your choice:");
 scanf("%d",&ch);
 switch(ch){
@@ -58,7 +82,9 @@ switch(ch){
    display();
    break;
  case 4:
-   printf("existing\n");
+   search();
+   break;
+ case 5:
    exit(0);
  default:
   printf("Invalid choice.\n");
@@ -66,5 +92,4 @@ switch(ch){
 }
 return 0;
 }
-
-                 
+            
