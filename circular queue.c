@@ -130,7 +130,6 @@ do
  printf("3.search\n");
  printf("4.display\n");
  printf("5.exit\n");
-
  printf("Enter your choice:");
  scanf("%d",&choice);
 switch(choice)
