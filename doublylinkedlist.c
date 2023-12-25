@@ -140,7 +140,7 @@ while(link->next!=NULL){
 printf("%d\t",link->data);
 link=link->next;
 }
-printf("%d\n",link->data);
+printf("%d",link->data);
 }}
 
 void search()
