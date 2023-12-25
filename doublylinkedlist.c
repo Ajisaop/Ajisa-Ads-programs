@@ -146,7 +146,6 @@ int data;
 printf("Enter the element to search:");
 scanf("%d",&data);
 struct node*link=head;
-printf("\t\t");
 do{
 if(link->data==data){
 printf("\nThe element is found at the position %d",link->data,count);
