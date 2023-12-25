@@ -143,7 +143,6 @@ link=link->next;
 printf("%d\n",link->data);
 }}
 
-
 void search()
 {
 int count=1;
