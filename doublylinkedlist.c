@@ -26,7 +26,6 @@ end=node;
 }
 size++;
 }
-
 void insert_end(int data)
 {
 struct node*node;
@@ -46,7 +45,6 @@ end=node;
 }
 size++;
 }
-
 void insert(int data,int pos)
 {
 int count=1;
@@ -70,7 +68,6 @@ temp=temp->next;
 }
 while(count<=pos);
 }
-
 void delete_head()
 {
 struct node*temp;
@@ -89,7 +86,6 @@ size--;
 else
 printf("\nLinked list is empty!");
 }
-
 void delete_end()
 {
 if(head==NULL)
@@ -106,7 +102,6 @@ end->next=NULL;
 free(temp);
 size--;
 }}
-
 void delete(int pos)
 {
 int count=1;
@@ -130,7 +125,6 @@ next_temp=next_temp->next;
 }
 }while(count<=pos);
 }
-
 void display(){
 if(head==NULL)
 printf("\nlinked list is empty!");
@@ -142,7 +136,6 @@ link=link->next;
 }
 printf("%d",link->data);
 }}
-
 void search()
 {
 int count=1;
@@ -163,7 +156,6 @@ link=link->next;
 }while(link!=NULL);
 printf("\nThe element is not found");
 }}
-
 int main()
 {
 int ch,data,pos;
