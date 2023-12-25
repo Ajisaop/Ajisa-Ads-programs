@@ -71,7 +71,7 @@ void delete_head(){
 struct node *temp;
 if(head!=NULL)
 {
-printf("\n\t\tNode deleted:%d,head->data");
+printf("\nNode deleted:%d,head->data");
 temp=head;
 head=head->next;
 if(head!=NULL)
@@ -82,14 +82,14 @@ free(temp);
 size--;
 }
 else
-printf("\n\t\tLinked list is empty!!");
+printf("\nLinked list is empty!");
 }
 
 void delete_end(){
 if(head==NULL)
-printf("\t\t Linked list is empty!!");
+printf("\nLinked list is empty!");
 else{
-printf("\n\t\tNode deleted:%d",end->data);
+printf("\nNode deleted:%d",end->data);
 struct node*temp,*next_temp;
 temp=end;
 end=end->prev;
@@ -110,7 +110,7 @@ do{
 if(count==pos){
 temp->next=next_temp->next;
 (next_temp->next)->prev=temp;
-printf("\n\t\tNode deleted:%d",next_temp->data);
+printf("\nNode deleted:%d",next_temp->data);
 free(next_temp);
 size--;
 break;
@@ -123,80 +123,66 @@ next_temp=next_temp->next;
 while(count<=pos);
 }
 
-void display_forward(){
+void display(){
 if(head==NULL)
-printf("\n\t\tLinked list is empty!!");
+printf("\nLinked list is empty!");
 else{
 struct node*link=head;
-printf("\t\t");
 while(link->next!=NULL){
-printf("%d",link->data);
+printf("%d\t",link->data);
 link=link->next;
 }
 printf("%d\n",link->data);
 }
 }
 
-void display_reverse(){
-if(end==NULL)
-printf("\n\t\tLinked list is empty!!");
-else{
-struct node*link=end;
-printf("\t\t");
-while(link->prev!=NULL){
-printf("%d",link->data);
-link=link->prev;
-}
-printf("%d\n",link->data);
-}
-}
-
-void search(){
+void search()
+{
 int count=1;
 if(head==NULL)
-printf("\n\t\tLinked list is empty!!");
+printf("\nlinked list is empty!");
 else{
 int data;
-printf("Enter the number you want to search:");
+printf("Enter the element to search:");
 scanf("%d",&data);
 struct node*link=head;
 printf("\t\t");
 do{
 if(link->data==data){
-printf("\n\t\tThe number is found in the linked list!! %d",link->data,count);
+printf("\nThe element is found at the position %d",link->data,count);
 return;
 }
 count++;
 link=link->next;
-}
-while(link!=NULL);
-printf("\n\t\tThe number is not found in the linked list!!");
-}
-}
+}while(link!=NULL);
+printf("\nThe element is not found");
+}}
 
-int main(){
+int main()
+{
 int ch,data,pos;
 do{
-printf("\nMenu:\n1.Insert head\n2.Insert end\n3.Insert at particular position\n4.Delete heasd\n5.Delete end\n6.Delete at particular position\n7.Display forward\n8.Display reverse\n9.sesrch\n10End\nEnter your Choice:");
+printf("\n1.insert head\n2.insert end\n3.insert at position\n4.delete head\n5.delete end\n6.delete from position\n7.display\n8.search\n9.exit\nEnter your choice:");
 scanf("%d",&ch);
-switch(ch){
+switch(ch)
+{
 case 1:
-printf("Enter the data you need to store:");
+printf("Enter the element:");
 scanf("%d",&data);
 insert_head(data);
 break;
 case 2:
-printf("Enter the data you  need to store:");
+printf("Enter the element:");
 scanf("%d",&data);
 insert_end(data);
 break;
 case 3:
-printf("Enter the data you need to store:");
+printf("Enter the element:");
 scanf("%d",&data);
-printf("Enter the position where  you need to store:(Head=0;End=%d):",size);
+printf("Enter the position (head=0:end=%d):",size);
 scanf("%d",&pos);
-if(pos<0 || pos>size)
-printf("Invalid Position");
+if(pos<0||pos>size)
+printf("Invalid position!");
 else if(pos==0)
 insert_head(data);
 else if(pos==size)
@@ -212,33 +198,29 @@ case 5:
 delete_end();
 break;
 case 6:
-printf("Enter the position where  you need to delete from:(Head=0;End=%d):",size-1);
+printf("Enter the position to delete from(head=0:end=%d):",size-1);
 scanf("%d",&pos);
-if(pos<0 || pos<size)
-printf("Invalid Position");
+if(pos<0||pos>size)
+printf("\ninvalid position!");
 else if(pos==0)
-delete_head(data);
-else if(pos==size)
-delete_end(data);
+delete_head();
+else if(pos==size-1)
+delete_end();
 else
 delete(pos);
 break;
 case 7:
-display_forward();
+display();
 break;
 case 8:
-display_reverse();
-break;
-case 9:
 search();
 break;
-case 10:
-printf("\n\t\tThe program is successfully existing!!");
+case 9:
+printf("\nExit");
 break;
 default:
-printf("\n\t\tWrong Input");
-}
-}
-while(ch!=10);
+printf("\nInvalid choice!");
+}}
+while(ch!=9);
 return 0;
 }
