@@ -87,13 +87,13 @@ free(temp);
 size--;
 }
 else
-printf("\nlinked list is empty!");
+printf("\nLinked list is empty!");
 }
 
 void delete_end()
 {
 if(head==NULL)
-printf("\nlinked list is empty!");
+printf("\nLinked list is empty!");
 else{
 printf("\n node deleted:%d",end->data);
 struct node*temp,*next_temp;
@@ -205,10 +205,10 @@ case 5:
 delete_end();
 break;
 case 6:
-printf("Enter the position to delete from(head=0:end=%d):",size-1);
+printf("Enter the position to delete(head=0:end=%d):",size-1);
 scanf("%d",&pos);
 if(pos<0||pos>size)
-printf("\ninvalid position!");
+printf("\nInvalid position!");
 else if(pos==0)
 delete_head();
 else if(pos==size-1)
