@@ -94,7 +94,8 @@ void display()
 {
 if(front==-1)
 {
-   }
+ printf("queue is empty.");
+}
 else
 {
 int i=front;
