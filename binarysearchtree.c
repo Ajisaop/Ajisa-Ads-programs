@@ -88,14 +88,12 @@ root->right = deleteNode(root->right, temp->data);
 return root;
 }
 int main(){
-int opt;
+int ch;
 int value,searchv,key;
 do{
-printf("\n1)Create Root Node \n2)Insert Node\n3)Search\n");
-printf("4)inorderTraversal \n5)preorderTraversal \n6)postorderTraversal \n7)Delete \n8)Quiet \n");
-printf("Choose Option :: ");
-scanf("%d",&opt);
-switch(opt){
+printf("\n1.Create Root Node \n2.Insert Node\n3.Search\n4)inorderTraversal \n5.preorderTraversal \n6.postorderTraversal \n7.Delete \n8.Exit\nEnter your choice:");
+scanf("%d",&ch);
+switch(ch){
 case 1:
 printf("\nEnter a number : ");
 scanf("%d",&value);
@@ -124,6 +122,8 @@ case 7:
 printf("\nEnter a number to be deleted : ");
 scanf("%d",&key);
 deleteNode(root,key);
+case 8:
+exit(0) 
 break;
 defualt:
 printf("Invalid option!");
