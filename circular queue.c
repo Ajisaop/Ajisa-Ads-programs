@@ -24,7 +24,7 @@ void dequeue()
 {
 if(front==-1)
 {
-printf("queue is empty");
+printf("queue is empty\n");
 }
 else if(front==rear)
 {
@@ -94,7 +94,7 @@ void display()
 {
 if(front==-1)
 {
- printf("queue is empty.");
+ printf("queue is empty.\n");
 }
 else
 {
